@@ -1,0 +1,93 @@
+<!--/**
+ * Created by PhpStorm.
+ * User: jfq564
+ * Date: 20/12/2016
+ * Time: 3:15 PM
+ */-->
+<html">
+
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/olton/Metro-UI-CSS/master/build/css/metro-schemes.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/olton/Metro-UI-CSS/master/build/css/metro-rtl.min.css">
+    <link rel="script" href="https://cdn.rawgit.com/olton/Metro-UI-CSS/master/build/js/metro.min.js">
+
+    <link href="css/metro.css" rel="stylesheet">
+    <link href="css/metro-icons.css" rel="stylesheet">
+    <link href="css/metro-responsive.css" rel="stylesheet">
+
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/metro.js"></script>
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="login.css">
+
+    <title>Welcome </title>
+</head>
+
+<body>
+<div class="app-bar darcula">
+    <a class="app-bar-element" href="">Panel</a>
+    <span class="app-bar-divider"></span>
+    <ul class="app-bar-menu">
+        <li>
+            <a href="#" class="dropdown-toggle"><span class="mif-wrench"></span> Controls</a>
+            <ul class="d-menu" data-role="dropdown">
+                <li><a href=""><span class="mif-redo"></span> Restart</a></li>
+                <li><a href=""><span class="mif-switch"></span> Shutdown</a></li>
+                <li class="divider"></li>
+                <li><a href="" class="dropdown-toggle">Other Products</a>
+                    <ul class="d-menu" data-role="dropdown">
+                        <li><a href="">Internet Explorer 10</a></li>
+                        <li><a href="">Skype</a></li>
+                        <li><a href="">Surface</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="http://mail.thesystemisdown.io"><span class="mif-mail"></span> Mail</a></li>
+        <li><a href="">Help</a></li>
+    </ul>
+    <a href="logout.php" class="app-bar-element place-right">
+        <span class="mif-exit"></span>    <?php echo $login_session; ?>Logout</a>
+
+</div>
+<div clas="tile-container" style="margin: 2%;">
+
+    <a href="http://172.16.17.10:32400/web">
+    <div class="tile bg-darkOrange fg-white" data-role="tile">
+        <div class="tile-content iconic"><span class="icon mif-play mif-4x"></span><span class="tile-label">Plex</span></div>
+    </div>
+    </a>
+    <a href="http://172.16.17.10:3000">
+        <div class="tile bg-orange fg-white" data-role="tile">
+            <div class="tile-content iconic"><span class="icon mif-plus mif-4x"></span><span class="tile-label">Plex Requests</span></div>
+        </div>
+    </a>
+    <a href="http://172.16.17.10:8989">
+        <div class="tile bg-black fg-white" data-role="tile">
+            <div class="tile-content iconic"><span class="icon mif-shrink mif-4x"></span><span class="tile-label">Sonarr</span></div>
+        </div>
+    </a>
+    <a href="http://172.16.17.10:8112">
+        <div class="tile bg-darkBlue fg-white" data-role="tile">
+            <div class="tile-content iconic"><span class="icon mif-download mif-4x"></span><span class="tile-label">Deluge</span></div>
+        </div>
+    </a>
+    <div class="tile-wide bg-indigo fg-white" data-role="tile"><h3  style="margin: 2%;"><span class="mif-sun mif-2x"></span> Weather <!--link to yahoo--></h3>
+        <p style="margin: 2%;"><span class="mif-none mif-2x"></span><span class="mif-celsius mif-2x"></span></p>
+        <p><h4 style="margin: 2%;">UV <span class="mif-none mif-2x"></span></h4></p>
+    </div>
+
+    <a href="cloud.thesystemisdown.io">
+    <div class="tile bg-lime fg-white" data-role="tile">
+        <div class="tile-content iconic"><span class="icon mif-cloud mif-4x"></span><span class="tile-label">Nextcloud</span></div>
+    </div>
+    </a>
+
+</div>
+</div>
+
+</body>
+
+</html>
