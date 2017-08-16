@@ -11,9 +11,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Metro, a sleek, intuitive, and powerful framework for faster and easier web development for Windows Metro Style.">
-    <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, metro, front-end, frontend, web development">
-    <meta name="author" content="Sergey Pimenov and Metro UI CSS contributors">
     <link rel='shortcut icon' type='image/x-icon' href='../favicon.ico' />
     <link href="../css/metro.css" rel="stylesheet">
     <link href="../css/metro-icons.css" rel="stylesheet">
@@ -27,19 +24,7 @@
     <link rel="stylesheet" href="login.css">
 
     <!-- Custom JS -->
-    <script>
-        $(document).ready(function () {
-            var city = "Wright, ACT, AU";
-            var searchtext = "select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "') and u='c'"
-            //change city variable dynamically as required
-            $.getJSON("https://query.yahooapis.com/v1/public/yql?q=" + searchtext + "&format=json").success(function (data) {
-                console.log(data);
-                $('#city').html(city);
-                $('#temp').html("Currently " + data.query.results.channel.item.condition.temp);
-                $('#text').html(data.query.results.channel.item.condition.text);
-            });
-        });    
-    </script>
+    <script src="weather.js"></script>
     <title>Welcome</title>
 
 </head>
@@ -55,11 +40,11 @@
                 <li><a href=""><span class="mif-redo"></span> Restart</a></li>
                 <li><a href=""><span class="mif-switch"></span> Shutdown</a></li>
                 <li class="divider"></li>
-                <li><a href="" class="dropdown-toggle">Other Products</a>
+                <li><a href="" class="dropdown-toggle">Software</a>
                     <ul class="d-menu" data-role="dropdown">
-                        <li><a href="">Internet Explorer 10</a></li>
-                        <li><a href="">Skype</a></li>
-                        <li><a href="">Surface</a></li>
+                        <li><a href="">Games</a></li>
+                        <li><a href="">Installers</a></li>
+                        <li><a href="">ISOs</a></li>
                     </ul>
                 </li>
             </ul>
@@ -96,13 +81,18 @@
     <div class="tile-wide bg-indigo fg-white" data-role="tile"><h5  style="margin: 2%;"><span class="mif-sun mif-2x"></span> Weather</h5>
     <div id="city" style="margin: 2%;"></div>
         <p style="margin: 2%;"><span id="temp"><span class="mif-loop2 mif-ani-spin"></span></span><span class="mif-celsius mif-2x" style="margin-left:-5px;"></span></p>
-        <p style="margin: 2%;"><span id="text"><span class="mif-loop2 mif-ani-spin"></span></span><span class="mif-rainy mif-2x" style="margin-left:10px;"></span></p>
+        <p style="margin: 2%;"><span id="text">Loading...<span class="mif-loop2 mif-ani-spin"></span></span><span id="weather"></span></p>
     </div>
 
     <a href="http://cloud.thesystemisdown.io">
     <div class="tile bg-lime fg-white" data-role="tile">
         <div class="tile-content iconic"><span class="icon mif-cloud mif-4x"></span><span class="tile-label">Nextcloud</span></div>
     </div>
+    </a>
+    <a href="ftp://172.16.17.10">
+        <div class="tile bg-teal fg-white" data-role="tile">
+            <div class="tile-content iconic"><span class="icon mif-shrink2 mif-4x"></span><span class="tile-label">Local Files</span></div>
+        </div>
     </a>
 
 </div>
